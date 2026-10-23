@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# --- START OF USER CONFIGURATION ---
+# Please modify the following paths according to your system environment.
+
+# Path to the directory containing the raw FASTQ files (e.g., 00.CleanData)
+DataPath="/path/to/your/00.CleanData"
+
+# Path to the directory containing the Kallisto index file
+IndexPath="/path/to/your/kallisto/index"
+
+# Path for the Kallisto quantification output
+ResultPath="/path/to/your/kallistoQuantResultsGENCODE"
+# --- END OF USER CONFIGURATION ---
+
+# --- Analysis Script ---
+
+echo "Input data path: $DataPath"
+echo "Index path: $IndexPath"
+echo "Output results path: $ResultPath"
+
+# Change to the data directory; exit if it fails.
+cd "$DataPath" || { echo "Error: Cannot change directory to $DataPath"; exit 1; }
+
+for folder in *
+do
+    # Create a subdirectory in the results path.
+    mkdir -p "$ResultPath/${folder:15}"
+
+    # Define the path to the sample's FASTQ files.
+    file="$folder/c*"
+
+    echo "Processing sample: ${folder:15}"
+
+    # Run Kallisto quant.
+    kallisto quant -t 20 --bias \
+      -i "$IndexPath/gencode.transcripts.release-43_k31.idx" \
+      -o "$ResultPath/${folder:15}" $file
+done
+
+echo "Kallisto quantification complete."
