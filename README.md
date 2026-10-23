@@ -1,7 +1,4 @@
-# scRNA-MSC-0steogenesis
 # Identification of a surface marker of osteogenic tendency of mesenchymal stem cells
-
-[![DOI](https://img.shields.io/badge/DOI-YOUR_PAPER_DOI-blue.svg)](https://doi.org/YOUR_PAPER_DOI)
 
 This repository contains the code for the analysis in the manuscript titled: "**Identification of a surface marker of osteogenic tendency of mesenchymal stem cells**".
 
@@ -21,7 +18,7 @@ To replicate the analysis, please follow these steps to create the computational
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your_username/MSC-Osteo-Marker.git
+    git clone https://github.com/StephenZhang3/MSC-Osteo-Marker.git
     cd MSC-Osteo-Marker
     ```
 
@@ -55,5 +52,3 @@ The analysis pipeline is organized into several scripts located in the `scripts/
 ## Citation
 
 If you use this code or data in your research, please cite our paper:
-
-> Wengang Liu, Sihan Zhang, et al. (2024). "Identification of a surface marker of osteogenic tendency of mesenchymal stem cells". *Journal Name*.
