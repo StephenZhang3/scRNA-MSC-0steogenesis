@@ -1,0 +1,19 @@
+name: hMSC
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.12
+  - r-base=4.5
+  - r-seurat
+  - r-ggplot2
+  - r-ggpubr
+  - r-hmisc
+  - bioconductor-complexheatmap
+  - r-dendextend
+  - bioconductor-clusterprofiler
+  - bioconductor-org.hs.eg.db
+  - r-languageserver
+  - r-irkernel
+  - r-httpgd
